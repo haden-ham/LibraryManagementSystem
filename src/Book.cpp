@@ -1,16 +1,31 @@
 #include "Book.h"
-#include <iostream>
+#include <iostream>  // Add this header for std::cout and std::endl
 
-Book::Book(std::string t, std::string a, int y, std::string i)
-    : title(t), author(a), year(y), isbn(i) {}
+// Updated constructor definition: accepts int for id, string for isbn
+Book::Book(int id, std::string title, std::string author, int year, std::string isbn) 
+    : id(id), title(title), author(author), year(year), isbn(isbn) {}
 
 void Book::display() const {
-    std::cout << "Title: " << title << "\n"
-              << "Author: " << author << "\n"
-              << "Year: " << year << "\n"
-              << "ISBN: " << isbn << "\n\n";
+    std::cout << "ID: " << id << ", Title: " << title << ", Author: " << author 
+              << ", Year: " << year << ", ISBN: " << isbn << std::endl;
 }
 
-std::string Book::getTitle() const { return title; }
-std::string Book::getAuthor() const { return author; }
-std::string Book::getISBN() const { return isbn; }
+int Book::getId() const {
+    return id;
+}
+
+std::string Book::getISBN() const {
+    return isbn;
+}
+
+std::string Book::getTitle() const {
+    return title;
+}
+
+std::string Book::getAuthor() const {
+    return author;
+}
+
+int Book::getYear() const {
+    return year;
+}

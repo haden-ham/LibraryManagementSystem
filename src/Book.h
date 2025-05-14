@@ -5,19 +5,23 @@
 
 class Book {
 private:
+    int id;
     std::string title;
     std::string author;
     int year;
     std::string isbn;
 
 public:
-    Book(std::string title, std::string author, int year, std::string isbn);
-
+    // Updated constructor: accepts int for id, string for isbn
+    Book(int id, std::string title, std::string author, int year, std::string isbn);
+    
     void display() const;
-
+    
+    int getId() const;
+    std::string getISBN() const;
     std::string getTitle() const;
     std::string getAuthor() const;
-    std::string getISBN() const;
+    int getYear() const;
 };
 
 #endif
