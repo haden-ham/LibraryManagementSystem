@@ -1,9 +1,6 @@
-#ifndef LIBRARY_H
-#define LIBRARY_H
-
+#pragma once
 #include "Book.h"
 #include <vector>
-#include <string>
 
 class Library {
 private:
@@ -11,9 +8,7 @@ private:
 
 public:
     void addBook(const Book& book);
-    void removeBook(const std::string& isbn);
-    void searchByTitle(const std::string& title) const;
     void listBooks() const;
+    const Book* findBookById(int id) const;
+    bool removeBook(int id);
 };
-
-#endif
